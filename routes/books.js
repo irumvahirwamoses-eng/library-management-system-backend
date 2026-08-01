@@ -43,9 +43,14 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', requireRole('librarian', 'superadmin'), async (req, res) => {
   try {
-    const data = { ...req.body, school: req.schoolId || req.body.school };
+    const quantity = Number(req.body.quantity ?? 1);
+    const available = req.body.available === undefined || req.body.available === '' ? quantity : Number(req.body.available);
+    if (!Number.isFinite(quantity) || quantity < 0) return res.status(400).json({ error: 'Quantity must be a non-negative number' });
+    if (!Number.isFinite(available) || available < 0) return res.status(400).json({ error: 'Available must be a non-negative number' });
+    if (available > quantity) return res.status(400).json({ error: 'Available copies cannot be greater than quantity' });
+    const data = { ...req.body, quantity, available, school: req.schoolId || req.body.school };
     const book = await Book.create(data);
-    await logActivity({ schoolId: data.school, userRole: req.user.role, user: req.user.id, action: 'CREATE', entity: 'Book', details: { title: book.title } });
+    await logActivity({ schoolId: data.school, userRole: req.user.role, user: req.user.id, action: 'CREATE', entity: 'Book', details: { title: book.title, quantity } });
     res.status(201).json(book);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -54,8 +59,15 @@ router.post('/', requireRole('librarian', 'superadmin'), async (req, res) => {
 
 router.put('/:id', requireRole('librarian', 'superadmin'), async (req, res) => {
   try {
-    const book = await Book.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    await logActivity({ schoolId: book?.school, userRole: req.user.role, user: req.user.id, action: 'UPDATE', entity: 'Book', details: { title: book?.title } });
+    const existing = await Book.findById(req.params.id);
+    if (!existing) return res.status(404).json({ error: 'Book not found' });
+    const quantity = req.body.quantity === undefined ? existing.quantity : Number(req.body.quantity);
+    const available = req.body.available === undefined ? existing.available : Number(req.body.available);
+    if (!Number.isFinite(quantity) || quantity < 0) return res.status(400).json({ error: 'Quantity must be a non-negative number' });
+    if (!Number.isFinite(available) || available < 0) return res.status(400).json({ error: 'Available must be a non-negative number' });
+    if (available > quantity) return res.status(400).json({ error: 'Available copies cannot be greater than quantity' });
+    const book = await Book.findByIdAndUpdate(req.params.id, { ...req.body, quantity, available }, { new: true });
+    await logActivity({ schoolId: book?.school, userRole: req.user.role, user: req.user.id, action: 'UPDATE', entity: 'Book', details: { title: book?.title, quantity } });
     res.json(book);
   } catch (err) {
     res.status(400).json({ error: err.message });
