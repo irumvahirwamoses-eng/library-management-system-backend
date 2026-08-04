@@ -70,10 +70,6 @@ router.post('/import-bulk', requireRole('librarian', 'superadmin'), async (req, 
           results.errors.push({ row: i + 1, identityNumber, error: 'Teacher name is required' });
           continue;
         }
-        if (!subject) {
-          results.errors.push({ row: i + 1, identityNumber, error: 'Subject is required' });
-          continue;
-        }
         if (!identityNumber || !/^\d{16}$/.test(identityNumber)) {
           results.errors.push({ row: i + 1, identityNumber: row.identityNumber, error: 'National ID must be exactly 16 digits' });
           continue;
