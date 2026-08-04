@@ -51,4 +51,59 @@ router.delete('/:id', requireRole('librarian', 'superadmin'), async (req, res) =
   res.json({ message: 'Teacher deleted' });
 });
 
+router.post('/import-bulk', requireRole('librarian', 'superadmin'), async (req, res) => {
+  try {
+    const { teachers } = req.body;
+    if (!Array.isArray(teachers) || teachers.length === 0) {
+      return res.status(400).json({ error: 'No teachers provided' });
+    }
+    const schoolId = req.schoolId || req.body.school;
+    const hashedPassword = await bcrypt.hash('changeme', 10);
+    const results = { imported: 0, errors: [] };
+    for (let i = 0; i < teachers.length; i++) {
+      const row = teachers[i];
+      try {
+        const teacherName = String(row.teacherName || '').trim();
+        const subject = String(row.subject || '').trim();
+        const identityNumber = String(row.identityNumber || '').replace(/\s/g, '').trim();
+        if (!teacherName) {
+          results.errors.push({ row: i + 1, identityNumber, error: 'Teacher name is required' });
+          continue;
+        }
+        if (!subject) {
+          results.errors.push({ row: i + 1, identityNumber, error: 'Subject is required' });
+          continue;
+        }
+        if (!identityNumber || !/^\d{16}$/.test(identityNumber)) {
+          results.errors.push({ row: i + 1, identityNumber: row.identityNumber, error: 'National ID must be exactly 16 digits' });
+          continue;
+        }
+        const exists = await Teacher.findOne({ identityNumber, school: schoolId });
+        if (exists) {
+          results.errors.push({ row: i + 1, identityNumber, error: 'Teacher with this ID already exists' });
+          continue;
+        }
+        await Teacher.create({
+          teacherName,
+          subject,
+          identityNumber,
+          phone: row.phone || '',
+          password: hashedPassword,
+          mustChangePassword: true,
+          school: schoolId
+        });
+        results.imported++;
+      } catch (err) {
+        results.errors.push({ row: i + 1, identityNumber: row.identityNumber, error: err.message });
+      }
+    }
+    if (results.imported > 0) {
+      await logActivity({ schoolId, userRole: req.user.role, user: req.user.id, action: 'IMPORT', entity: 'Teacher', details: { count: results.imported } });
+    }
+    res.json(results);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;

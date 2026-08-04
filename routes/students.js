@@ -57,4 +57,55 @@ router.delete('/:id', requireRole('librarian', 'superadmin'), async (req, res) =
   res.json({ message: 'Student deleted' });
 });
 
+router.post('/import-bulk', requireRole('librarian', 'superadmin'), async (req, res) => {
+  try {
+    const { students } = req.body;
+    if (!Array.isArray(students) || students.length === 0) {
+      return res.status(400).json({ error: 'No students provided' });
+    }
+    const schoolId = req.schoolId || req.body.school;
+    const hashedPassword = await bcrypt.hash('changeme', 10);
+    const results = { imported: 0, errors: [] };
+    for (let i = 0; i < students.length; i++) {
+      const row = students[i];
+      try {
+        const nesaCode = String(row.nesaCode || '').trim();
+        const studentName = String(row.studentName || '').trim();
+        if (!nesaCode || !/^\d{12}$/.test(nesaCode)) {
+          results.errors.push({ row: i + 1, nesaCode, error: 'NESA code must be exactly 12 digits' });
+          continue;
+        }
+        if (!studentName) {
+          results.errors.push({ row: i + 1, nesaCode, error: 'Student name is required' });
+          continue;
+        }
+        const exists = await Student.findOne({ nesaCode, school: schoolId });
+        if (exists) {
+          results.errors.push({ row: i + 1, nesaCode, error: 'Student with this NESA code already exists' });
+          continue;
+        }
+        await Student.create({
+          nesaCode,
+          studentName,
+          class: row.class || '',
+          phonenumber: row.phonenumber || '',
+          level: row.level || '',
+          password: hashedPassword,
+          mustChangePassword: true,
+          school: schoolId
+        });
+        results.imported++;
+      } catch (err) {
+        results.errors.push({ row: i + 1, nesaCode: row.nesaCode, error: err.message });
+      }
+    }
+    if (results.imported > 0) {
+      await logActivity({ schoolId, userRole: req.user.role, user: req.user.id, action: 'IMPORT', entity: 'Student', details: { count: results.imported } });
+    }
+    res.json(results);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
