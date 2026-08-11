@@ -16,6 +16,10 @@ router.get('/', async (req, res) => {
 router.post('/', requireRole('librarian', 'superadmin'), async (req, res) => {
   try {
     const data = { ...req.body, school: req.schoolId || req.body.school };
+    if (data.tableName) {
+      data.tableName = String(data.tableName).trim().toLowerCase().split(/\s+/).filter(Boolean)
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    }
     const allocation = await BookAllocation.create(data);
     await logActivity({ schoolId: data.school, userRole: req.user.role, user: req.user.id, action: 'CREATE', entity: 'Allocation', details: { tableName: allocation.tableName } });
     res.status(201).json(allocation);
