@@ -1,0 +1,71 @@
+{
+  "database": "lms",
+  "exportedAt": "2026-08-07T07:52:36.604Z",
+  "collections": [
+    {
+      "collection": "reports",
+      "documents": 1,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\reports.json"
+    },
+    {
+      "collection": "borrowedbooks",
+      "documents": 4,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\borrowedbooks.json"
+    },
+    {
+      "collection": "schools",
+      "documents": 2,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\schools.json"
+    },
+    {
+      "collection": "books",
+      "documents": 442,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\books.json"
+    },
+    {
+      "collection": "notifications",
+      "documents": 7,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\notifications.json"
+    },
+    {
+      "collection": "superadmins",
+      "documents": 1,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\superadmins.json"
+    },
+    {
+      "collection": "activitylogs",
+      "documents": 107,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\activitylogs.json"
+    },
+    {
+      "collection": "schoolapplications",
+      "documents": 2,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\schoolapplications.json"
+    },
+    {
+      "collection": "bookallocations",
+      "documents": 384,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\bookallocations.json"
+    },
+    {
+      "collection": "librarians",
+      "documents": 2,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\librarians.json"
+    },
+    {
+      "collection": "teachers",
+      "documents": 115,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\teachers.json"
+    },
+    {
+      "collection": "requests",
+      "documents": 9,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\requests.json"
+    },
+    {
+      "collection": "students",
+      "documents": 349,
+      "file": "C:\\Users\\Administrator\\Desktop\\library_management_system\\backend\\backups\\lms_2026-08-07T07-52-30\\students.json"
+    }
+  ]
+}

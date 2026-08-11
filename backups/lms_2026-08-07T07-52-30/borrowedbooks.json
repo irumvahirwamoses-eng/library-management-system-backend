@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6a6ca4f4443d2e9326917ffa",
+    "book": "6a6b79056c0790107602e70c",
+    "student": "6a6ca4ab443d2e9326917fed",
+    "borrowDate": "2026-07-31T13:36:52.406Z",
+    "status": "returned",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T13:36:52.424Z",
+    "updatedAt": "2026-08-01T07:00:27.221Z",
+    "__v": 0,
+    "returnDate": "2026-08-01T07:00:27.221Z"
+  },
+  {
+    "_id": "6a6db22c45710cc4d47e509a",
+    "book": "6a6db05a45710cc4d47e5063",
+    "student": "6a6b79076c0790107602e728",
+    "borrowDate": "2026-08-01T08:45:32.245Z",
+    "status": "returned",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-08-01T08:45:32.246Z",
+    "updatedAt": "2026-08-01T08:50:27.853Z",
+    "__v": 0,
+    "returnDate": "2026-08-01T08:50:27.852Z"
+  },
+  {
+    "_id": "6a6df63ee96610cc2eb62ba7",
+    "book": "6a6df5b2e96610cc2eb62b7b",
+    "student": "6a6df621e96610cc2eb62b9b",
+    "borrowDate": "2026-08-01T13:35:58.785Z",
+    "status": "returned",
+    "school": "6a6ca92a443d2e9326918073",
+    "createdAt": "2026-08-01T13:35:58.786Z",
+    "updatedAt": "2026-08-01T13:41:06.615Z",
+    "__v": 0,
+    "returnDate": "2026-08-01T13:41:06.614Z"
+  },
+  {
+    "_id": "6a6f97ca15b313e69e838096",
+    "book": "6a6f1e3936a044c334ed4bd6",
+    "teacher": "6a6b79076c0790107602e72a",
+    "borrowDate": "2026-08-02T19:17:30.261Z",
+    "status": "returned",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-08-02T19:17:30.266Z",
+    "updatedAt": "2026-08-02T19:17:55.798Z",
+    "__v": 0,
+    "returnDate": "2026-08-02T19:17:55.798Z"
+  }
+]

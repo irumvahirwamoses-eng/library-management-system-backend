@@ -1,0 +1,31 @@
+[
+  {
+    "_id": "6a6ca918443d2e932691806c",
+    "schoolName": "ep.muganza",
+    "schoolType": "general_education",
+    "district": "nyarugenge",
+    "sector": "kimisagara",
+    "phone": "0786578390",
+    "email": "muganza@gmail.com",
+    "adminName": "aporinaire",
+    "status": "approved",
+    "createdAt": "2026-07-31T13:54:32.165Z",
+    "updatedAt": "2026-07-31T13:54:50.580Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6d970b45710cc4d47e4dda",
+    "schoolName": "Ecole technique saint Kizito",
+    "schoolType": "tvet",
+    "district": "Gisagara",
+    "sector": "Save",
+    "phone": "0793002001",
+    "email": "uwayezujosiane66@gmail.com",
+    "adminName": "Josiane UWAYEZU",
+    "status": "rejected",
+    "createdAt": "2026-08-01T06:49:47.650Z",
+    "updatedAt": "2026-08-01T06:58:19.743Z",
+    "__v": 0,
+    "rejectionReason": "wrong user experience"
+  }
+]

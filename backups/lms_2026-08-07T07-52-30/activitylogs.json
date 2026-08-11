@@ -1,0 +1,1551 @@
+[
+  {
+    "_id": "6a6cbef97a092f3f5cbd1028",
+    "user": "6a6b79046c0790107602e585",
+    "userRole": "superadmin",
+    "action": "DISABLE",
+    "entity": "School",
+    "details": {
+      "name": "ep.muganza"
+    },
+    "createdAt": "2026-07-31T15:27:53.510Z",
+    "updatedAt": "2026-07-31T15:27:53.510Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cbef97a092f3f5cbd102b",
+    "user": "6a6b79046c0790107602e585",
+    "userRole": "superadmin",
+    "action": "ENABLE",
+    "entity": "School",
+    "details": {
+      "name": "ep.muganza"
+    },
+    "createdAt": "2026-07-31T15:27:53.561Z",
+    "updatedAt": "2026-07-31T15:27:53.561Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cbf7590a4b6cbed44a755",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "ARCHIVE",
+    "entity": "Book",
+    "details": {
+      "title": "CONSTRUCTION"
+    },
+    "createdAt": "2026-07-31T15:29:57.813Z",
+    "updatedAt": "2026-07-31T15:29:57.813Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cbf7590a4b6cbed44a758",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "RESTORE",
+    "entity": "Book",
+    "details": {
+      "title": "CONSTRUCTION"
+    },
+    "createdAt": "2026-07-31T15:29:57.845Z",
+    "updatedAt": "2026-07-31T15:29:57.845Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cc30c305deb856f4b1249",
+    "user": "6a6b79046c0790107602e585",
+    "userRole": "superadmin",
+    "action": "RESET_PASSWORD",
+    "entity": "School",
+    "details": {
+      "name": "ep.muganza"
+    },
+    "createdAt": "2026-07-31T15:45:16.506Z",
+    "updatedAt": "2026-07-31T15:45:16.506Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccbfab0eaffb6d72f747d",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e70e",
+    "userRole": "student",
+    "action": "REQUEST",
+    "entity": "Book",
+    "details": {
+      "bookId": "6a6b79056c0790107602e70c"
+    },
+    "createdAt": "2026-07-31T16:23:22.848Z",
+    "updatedAt": "2026-07-31T16:23:22.848Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccbfbb0eaffb6d72f7488",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79076c0790107602e72a",
+    "userRole": "teacher",
+    "action": "REQUEST",
+    "entity": "Book",
+    "details": {
+      "bookId": "6a6b79056c0790107602e70c"
+    },
+    "createdAt": "2026-07-31T16:23:23.263Z",
+    "updatedAt": "2026-07-31T16:23:23.263Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce71c7f5a55516201653",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "REJECT",
+    "entity": "Request",
+    "details": {
+      "book": "CONSTRUCTION"
+    },
+    "createdAt": "2026-07-31T16:33:53.131Z",
+    "updatedAt": "2026-07-31T16:33:53.131Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce73c7f5a5551620165e",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "REJECT",
+    "entity": "Request",
+    "details": {
+      "book": "BRICK WORK"
+    },
+    "createdAt": "2026-07-31T16:33:55.081Z",
+    "updatedAt": "2026-07-31T16:33:55.081Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce74c7f5a55516201669",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "REJECT",
+    "entity": "Request",
+    "details": {
+      "book": "CONSTRUCTION"
+    },
+    "createdAt": "2026-07-31T16:33:56.361Z",
+    "updatedAt": "2026-07-31T16:33:56.361Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce76c7f5a55516201675",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "REJECT",
+    "entity": "Request",
+    "details": {
+      "book": "BRICK WORK"
+    },
+    "createdAt": "2026-07-31T16:33:58.551Z",
+    "updatedAt": "2026-07-31T16:33:58.551Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccf1ec7f5a555162016cb",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6ca4ab443d2e9326917fed",
+    "userRole": "student",
+    "action": "REQUEST",
+    "entity": "Book",
+    "details": {
+      "bookId": "6a6b79056c0790107602e6f7"
+    },
+    "createdAt": "2026-07-31T16:36:46.799Z",
+    "updatedAt": "2026-07-31T16:36:46.799Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6d998b45710cc4d47e4e35",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "RETURN",
+    "entity": "Book",
+    "details": {
+      "book": "CONSTRUCTION"
+    },
+    "createdAt": "2026-08-01T07:00:27.934Z",
+    "updatedAt": "2026-08-01T07:00:27.934Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6d998b45710cc4d47e4e37",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "RETURN",
+    "entity": "Book",
+    "details": {
+      "book": "CONSTRUCTION"
+    },
+    "createdAt": "2026-08-01T07:00:27.940Z",
+    "updatedAt": "2026-08-01T07:00:27.940Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6d998b45710cc4d47e4e39",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "RETURN",
+    "entity": "Book",
+    "details": {
+      "book": "CONSTRUCTION"
+    },
+    "createdAt": "2026-08-01T07:00:27.942Z",
+    "updatedAt": "2026-08-01T07:00:27.942Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6d9f5f45710cc4d47e4ed3",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "kinyarwanda and English Dictionary"
+    },
+    "createdAt": "2026-08-01T07:25:19.354Z",
+    "updatedAt": "2026-08-01T07:25:19.354Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6d9fd845710cc4d47e4ee2",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "kinyarwanda and English Dictionary"
+    },
+    "createdAt": "2026-08-01T07:27:20.647Z",
+    "updatedAt": "2026-08-01T07:27:20.647Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6da17545710cc4d47e4f12",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Advanced level physics"
+    },
+    "createdAt": "2026-08-01T07:34:13.688Z",
+    "updatedAt": "2026-08-01T07:34:13.688Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6da33b45710cc4d47e4f3e",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Chemistry"
+    },
+    "createdAt": "2026-08-01T07:41:47.262Z",
+    "updatedAt": "2026-08-01T07:41:47.262Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6da3ec45710cc4d47e4f52",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Chemistry form III"
+    },
+    "createdAt": "2026-08-01T07:44:44.388Z",
+    "updatedAt": "2026-08-01T07:44:44.388Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6daceb45710cc4d47e4ffc",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Management accounting S5"
+    },
+    "createdAt": "2026-08-01T08:23:07.969Z",
+    "updatedAt": "2026-08-01T08:23:07.969Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6dae9545710cc4d47e501e",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting for S5"
+    },
+    "createdAt": "2026-08-01T08:30:13.793Z",
+    "updatedAt": "2026-08-01T08:30:13.793Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6daf1145710cc4d47e5032",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting S5"
+    },
+    "createdAt": "2026-08-01T08:32:17.573Z",
+    "updatedAt": "2026-08-01T08:32:17.573Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6dafbb45710cc4d47e504c",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "ICT in accounting  S6"
+    },
+    "createdAt": "2026-08-01T08:35:07.247Z",
+    "updatedAt": "2026-08-01T08:35:07.247Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db05a45710cc4d47e5065",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "ICT in accounting for S5"
+    },
+    "createdAt": "2026-08-01T08:37:46.689Z",
+    "updatedAt": "2026-08-01T08:37:46.689Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db22c45710cc4d47e509d",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "BORROW",
+    "entity": "Book",
+    "details": {
+      "book": "ICT in accounting for S5"
+    },
+    "createdAt": "2026-08-01T08:45:32.739Z",
+    "updatedAt": "2026-08-01T08:45:32.739Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db35445710cc4d47e50f2",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "RETURN",
+    "entity": "Book",
+    "details": {
+      "book": "ICT in accounting for S5"
+    },
+    "createdAt": "2026-08-01T08:50:28.579Z",
+    "updatedAt": "2026-08-01T08:50:28.579Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db41b45710cc4d47e510c",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "English language for accounting for S5"
+    },
+    "createdAt": "2026-08-01T08:53:47.302Z",
+    "updatedAt": "2026-08-01T08:53:47.302Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db4d345710cc4d47e511f",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting S4"
+    },
+    "createdAt": "2026-08-01T08:56:51.843Z",
+    "updatedAt": "2026-08-01T08:56:51.843Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db57d45710cc4d47e5133",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting  S5"
+    },
+    "createdAt": "2026-08-01T08:59:41.656Z",
+    "updatedAt": "2026-08-01T08:59:41.656Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db63b45710cc4d47e5145",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "English for accountin S4"
+    },
+    "createdAt": "2026-08-01T09:02:51.641Z",
+    "updatedAt": "2026-08-01T09:02:51.641Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db70a45710cc4d47e515b",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "English for accounting S6"
+    },
+    "createdAt": "2026-08-01T09:06:18.066Z",
+    "updatedAt": "2026-08-01T09:06:18.066Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db75a45710cc4d47e5166",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "English for accountin S4"
+    },
+    "createdAt": "2026-08-01T09:07:38.182Z",
+    "updatedAt": "2026-08-01T09:07:38.182Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6db9ef45710cc4d47e5198",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting S 4 "
+    },
+    "createdAt": "2026-08-01T09:18:39.742Z",
+    "updatedAt": "2026-08-01T09:18:39.742Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6df5b2e96610cc2eb62b7d",
+    "school": "6a6ca92a443d2e9326918073",
+    "user": "6a6ca92a443d2e9326918075",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "physics"
+    },
+    "createdAt": "2026-08-01T13:33:38.603Z",
+    "updatedAt": "2026-08-01T13:33:38.603Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6df622e96610cc2eb62b9d",
+    "school": "6a6ca92a443d2e9326918073",
+    "user": "6a6ca92a443d2e9326918075",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Student",
+    "details": {
+      "name": "moses"
+    },
+    "createdAt": "2026-08-01T13:35:30.212Z",
+    "updatedAt": "2026-08-01T13:35:30.212Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6df63fe96610cc2eb62baa",
+    "school": "6a6ca92a443d2e9326918073",
+    "user": "6a6ca92a443d2e9326918075",
+    "userRole": "librarian",
+    "action": "BORROW",
+    "entity": "Book",
+    "details": {
+      "book": "physics"
+    },
+    "createdAt": "2026-08-01T13:35:59.283Z",
+    "updatedAt": "2026-08-01T13:35:59.283Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6df67ae96610cc2eb62bb6",
+    "school": "6a6ca92a443d2e9326918073",
+    "user": "6a6ca92a443d2e9326918075",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "chemistry"
+    },
+    "createdAt": "2026-08-01T13:36:58.958Z",
+    "updatedAt": "2026-08-01T13:36:58.958Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6df6a4e96610cc2eb62bc7",
+    "school": "6a6ca92a443d2e9326918073",
+    "user": "6a6ca92a443d2e9326918075",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "chemistry"
+    },
+    "createdAt": "2026-08-01T13:37:40.034Z",
+    "updatedAt": "2026-08-01T13:37:40.034Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6df773e96610cc2eb62bfa",
+    "school": "6a6ca92a443d2e9326918073",
+    "user": "6a6ca92a443d2e9326918075",
+    "userRole": "librarian",
+    "action": "RETURN",
+    "entity": "Book",
+    "details": {
+      "book": "physics"
+    },
+    "createdAt": "2026-08-01T13:41:07.353Z",
+    "updatedAt": "2026-08-01T13:41:07.353Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6e19660f387fbd65554baa",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting for S5",
+      "quantity": 30
+    },
+    "createdAt": "2026-08-01T16:05:58.204Z",
+    "updatedAt": "2026-08-01T16:05:58.204Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f1c5e36a044c334ed4b83",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Taxation  S4",
+      "quantity": 14
+    },
+    "createdAt": "2026-08-02T10:30:54.007Z",
+    "updatedAt": "2026-08-02T10:30:54.007Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f1cb536a044c334ed4b90",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Taxation S5",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-02T10:32:21.386Z",
+    "updatedAt": "2026-08-02T10:32:21.386Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f1cfd36a044c334ed4b9b",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Auditing S6",
+      "quantity": 30
+    },
+    "createdAt": "2026-08-02T10:33:33.608Z",
+    "updatedAt": "2026-08-02T10:33:33.608Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f1d5d36a044c334ed4ba9",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Physical education and Sport S4",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-02T10:35:09.524Z",
+    "updatedAt": "2026-08-02T10:35:09.524Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f1dab36a044c334ed4bb5",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Physical education and Sport S5",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-02T10:36:27.561Z",
+    "updatedAt": "2026-08-02T10:36:27.561Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f1de236a044c334ed4bc5",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Physical education and Sport S6",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-02T10:37:22.045Z",
+    "updatedAt": "2026-08-02T10:37:22.045Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f1e3936a044c334ed4bd8",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting S6",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-02T10:38:49.286Z",
+    "updatedAt": "2026-08-02T10:38:49.286Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f97ca15b313e69e838099",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "BORROW",
+    "entity": "Book",
+    "details": {
+      "book": "Financial accounting S6"
+    },
+    "createdAt": "2026-08-02T19:17:30.761Z",
+    "updatedAt": "2026-08-02T19:17:30.761Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f97e415b313e69e8380a9",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "RETURN",
+    "entity": "Book",
+    "details": {
+      "book": "Financial accounting S6"
+    },
+    "createdAt": "2026-08-02T19:17:56.523Z",
+    "updatedAt": "2026-08-02T19:17:56.523Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f997215b313e69e8380dc",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Teacher",
+    "details": {
+      "name": "UWAYEZU"
+    },
+    "createdAt": "2026-08-02T19:24:34.269Z",
+    "updatedAt": "2026-08-02T19:24:34.269Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6f997d15b313e69e8380e1",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "DELETE",
+    "entity": "Teacher",
+    "details": {
+      "name": "irumva hirwa moses"
+    },
+    "createdAt": "2026-08-02T19:24:45.334Z",
+    "updatedAt": "2026-08-02T19:24:45.334Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a718ef1590a635161fa6be4",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "ICT for accounting S5",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-04T07:04:17.820Z",
+    "updatedAt": "2026-08-04T07:04:17.820Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a718f18590a635161fa6bee",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "DELETE",
+    "entity": "Book",
+    "details": {
+      "title": "ICT in accounting for S5"
+    },
+    "createdAt": "2026-08-04T07:04:56.618Z",
+    "updatedAt": "2026-08-04T07:04:56.618Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a718f6c590a635161fa6bf9",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Management for accounting S5",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-04T07:06:20.762Z",
+    "updatedAt": "2026-08-04T07:06:20.762Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71903a590a635161fa6c0d",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting S6",
+      "quantity": 30
+    },
+    "createdAt": "2026-08-04T07:09:46.685Z",
+    "updatedAt": "2026-08-04T07:09:46.685Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a7195c5590a635161fa6c7b",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting S6",
+      "quantity": 30
+    },
+    "createdAt": "2026-08-04T07:33:25.494Z",
+    "updatedAt": "2026-08-04T07:33:25.494Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71963a590a635161fa6c89",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting S6",
+      "quantity": 30
+    },
+    "createdAt": "2026-08-04T07:35:22.207Z",
+    "updatedAt": "2026-08-04T07:35:22.207Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a7197a8590a635161fa6c98",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting S 4 ",
+      "quantity": 14
+    },
+    "createdAt": "2026-08-04T07:41:28.104Z",
+    "updatedAt": "2026-08-04T07:41:28.104Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71a382a8ec720a437aa46b",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "English in use(student's book 1)",
+      "quantity": 35
+    },
+    "createdAt": "2026-08-04T08:32:02.845Z",
+    "updatedAt": "2026-08-04T08:32:02.845Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71a403a8ec720a437aa47a",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "English in use (student's book 2)",
+      "quantity": 40
+    },
+    "createdAt": "2026-08-04T08:34:11.608Z",
+    "updatedAt": "2026-08-04T08:34:11.608Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71a41fa8ec720a437aa483",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "English in use(student's book 1)",
+      "quantity": 35
+    },
+    "createdAt": "2026-08-04T08:34:39.388Z",
+    "updatedAt": "2026-08-04T08:34:39.388Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71a47ea8ec720a437aa490",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "English in use (student's book 3)",
+      "quantity": 34
+    },
+    "createdAt": "2026-08-04T08:36:14.697Z",
+    "updatedAt": "2026-08-04T08:36:14.697Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71aa7d007845d397c34548",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "English for accounting S6",
+      "quantity": 30
+    },
+    "createdAt": "2026-08-04T09:01:49.831Z",
+    "updatedAt": "2026-08-04T09:01:49.831Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ab19007845d397c34558",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "English for accountin S4",
+      "quantity": 14
+    },
+    "createdAt": "2026-08-04T09:04:25.853Z",
+    "updatedAt": "2026-08-04T09:04:25.853Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ab2e007845d397c34560",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting  S5",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-04T09:04:46.427Z",
+    "updatedAt": "2026-08-04T09:04:46.427Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ab57007845d397c3456a",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting S4",
+      "quantity": 14
+    },
+    "createdAt": "2026-08-04T09:05:27.207Z",
+    "updatedAt": "2026-08-04T09:05:27.207Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ab8b007845d397c34574",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "English language for accounting for S5",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-04T09:06:19.761Z",
+    "updatedAt": "2026-08-04T09:06:19.761Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71abd6007845d397c3458f",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "ICT in accounting  S6",
+      "quantity": 30
+    },
+    "createdAt": "2026-08-04T09:07:34.092Z",
+    "updatedAt": "2026-08-04T09:07:34.092Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71acb4007845d397c345aa",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting for S5",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-04T09:11:16.295Z",
+    "updatedAt": "2026-08-04T09:11:16.295Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ace5007845d397c345b4",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Management accounting S5",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-04T09:12:05.948Z",
+    "updatedAt": "2026-08-04T09:12:05.948Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ad3b007845d397c345c1",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "ICT for accountingS4",
+      "quantity": 14
+    },
+    "createdAt": "2026-08-04T09:13:31.406Z",
+    "updatedAt": "2026-08-04T09:13:31.406Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ad6e007845d397c345cb",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Management for accounting S4",
+      "quantity": 14
+    },
+    "createdAt": "2026-08-04T09:14:22.192Z",
+    "updatedAt": "2026-08-04T09:14:22.192Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ad9b007845d397c345d5",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Management for accounting S6 ",
+      "quantity": 31
+    },
+    "createdAt": "2026-08-04T09:15:07.822Z",
+    "updatedAt": "2026-08-04T09:15:07.822Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71adeb007845d397c345e2",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mathematics for accounting syllabus ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-04T09:16:27.460Z",
+    "updatedAt": "2026-08-04T09:16:27.460Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ae2e007845d397c345ed",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "English for accounting syllabus ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-04T09:17:34.426Z",
+    "updatedAt": "2026-08-04T09:17:34.426Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71ae69007845d397c345f8",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "ICT for accounting syllabus ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-04T09:18:33.317Z",
+    "updatedAt": "2026-08-04T09:18:33.317Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71aebd007845d397c34605",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Financial accounting syllabus ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-04T09:19:57.890Z",
+    "updatedAt": "2026-08-04T09:19:57.890Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71aef3007845d397c3460f",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Management for accounting syllabus ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-04T09:20:51.758Z",
+    "updatedAt": "2026-08-04T09:20:51.758Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71af29007845d397c34621",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Taxation syllabus ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-04T09:21:45.393Z",
+    "updatedAt": "2026-08-04T09:21:45.393Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71af4f007845d397c3462a",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Auditing syllabus ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-04T09:22:23.381Z",
+    "updatedAt": "2026-08-04T09:22:23.381Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71af78007845d397c34634",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Physical education and Sport syllabus ",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-04T09:23:04.164Z",
+    "updatedAt": "2026-08-04T09:23:04.164Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71bb17db468e64d8adbf55",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Teacher",
+    "details": {
+      "name": "Ntamagiro Jean Bosco"
+    },
+    "createdAt": "2026-08-04T10:12:39.534Z",
+    "updatedAt": "2026-08-04T10:12:39.534Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71bb6fdb468e64d8adbf60",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Teacher",
+    "details": {
+      "name": "Nsanzimana Fidèle "
+    },
+    "createdAt": "2026-08-04T10:14:07.332Z",
+    "updatedAt": "2026-08-04T10:14:07.332Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a71bd5adb468e64d8adbf85",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Teacher",
+    "details": {
+      "name": "Muhire Theogene "
+    },
+    "createdAt": "2026-08-04T10:22:18.447Z",
+    "updatedAt": "2026-08-04T10:22:18.447Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a720c8b687f511b13a38fa2",
+    "school": "6a6ca92a443d2e9326918073",
+    "user": "6a6ca92a443d2e9326918075",
+    "userRole": "librarian",
+    "action": "IMPORT",
+    "entity": "Teacher",
+    "details": {
+      "count": 57
+    },
+    "createdAt": "2026-08-04T16:00:11.783Z",
+    "updatedAt": "2026-08-04T16:00:11.783Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d0ba291d7340f2ff3532",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "IMPORT",
+    "entity": "Student",
+    "details": {
+      "count": 187
+    },
+    "createdAt": "2026-08-05T05:57:14.107Z",
+    "updatedAt": "2026-08-05T05:57:14.107Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d0fd291d7340f2ff35ed",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "IMPORT",
+    "entity": "Teacher",
+    "details": {
+      "count": 54
+    },
+    "createdAt": "2026-08-05T05:58:21.533Z",
+    "updatedAt": "2026-08-05T05:58:21.533Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d155291d7340f2ff35f7",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Teacher",
+    "details": {
+      "name": "UWAYEZU Josiane"
+    },
+    "createdAt": "2026-08-05T05:59:49.840Z",
+    "updatedAt": "2026-08-05T05:59:49.840Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d2b4291d7340f2ff3620",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Mk fundamental economics East Africa edition ",
+      "quantity": 26
+    },
+    "createdAt": "2026-08-05T06:05:40.651Z",
+    "updatedAt": "2026-08-05T06:05:40.651Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d504291d7340f2ff369d",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "JA company program ",
+      "quantity": 51
+    },
+    "createdAt": "2026-08-05T06:15:32.298Z",
+    "updatedAt": "2026-08-05T06:15:32.298Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d57f291d7340f2ff36ac",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Recording financial translations",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-05T06:17:35.093Z",
+    "updatedAt": "2026-08-05T06:17:35.093Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d5c5291d7340f2ff36c6",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "UPDATE",
+    "entity": "Book",
+    "details": {
+      "title": "Recording financial translations",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-05T06:18:45.480Z",
+    "updatedAt": "2026-08-05T06:18:45.480Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d64c291d7340f2ff36d6",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Principles of costing ",
+      "quantity": 2
+    },
+    "createdAt": "2026-08-05T06:21:00.818Z",
+    "updatedAt": "2026-08-05T06:21:00.818Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a72d6ad291d7340f2ff36e3",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Effective working in accounting and finance ",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-05T06:22:37.390Z",
+    "updatedAt": "2026-08-05T06:22:37.390Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a73023888256d98911a1a04",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "IMPORT",
+    "entity": "Student",
+    "details": {
+      "count": 146
+    },
+    "createdAt": "2026-08-05T09:28:24.334Z",
+    "updatedAt": "2026-08-05T09:28:24.334Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a7586d3863300b31bc992e8",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "calculus I",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:18:43.165Z",
+    "updatedAt": "2026-08-07T07:18:43.165Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a7587d9863300b31bc99301",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Elementary statistics",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:23:05.731Z",
+    "updatedAt": "2026-08-07T07:23:05.731Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a75884a863300b31bc9930f",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Technician Mathematics",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:24:58.928Z",
+    "updatedAt": "2026-08-07T07:24:58.928Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a7588e3863300b31bc99320",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Applied Mathemetics",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:27:31.520Z",
+    "updatedAt": "2026-08-07T07:27:31.520Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a75898d863300b31bc99333",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "calculus II",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:30:21.643Z",
+    "updatedAt": "2026-08-07T07:30:21.643Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a758a43863300b31bc99346",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Statistics for Engineers and Scientists",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:33:23.883Z",
+    "updatedAt": "2026-08-07T07:33:23.883Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a758b4d863300b31bc9935f",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Algebra and Trigonometry",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:37:49.339Z",
+    "updatedAt": "2026-08-07T07:37:49.339Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a758c21863300b31bc99374",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Geometry",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:41:21.006Z",
+    "updatedAt": "2026-08-07T07:41:21.006Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a758ca9863300b31bc99384",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Beginning Algebra",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:43:37.148Z",
+    "updatedAt": "2026-08-07T07:43:37.148Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a758d63863300b31bc99397",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "The Motivate Essential Mathematics for Technicians",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:46:43.195Z",
+    "updatedAt": "2026-08-07T07:46:43.195Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a758e36863300b31bc993ac",
+    "school": "6a6b79046c0790107602e587",
+    "user": "6a6b79056c0790107602e589",
+    "userRole": "librarian",
+    "action": "CREATE",
+    "entity": "Book",
+    "details": {
+      "title": "Engineering Mathematics",
+      "quantity": 1
+    },
+    "createdAt": "2026-08-07T07:50:14.866Z",
+    "updatedAt": "2026-08-07T07:50:14.866Z",
+    "__v": 0
+  }
+]

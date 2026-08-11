@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "6a6cc27b305deb856f4b1209",
+    "student": "6a6ca4ab443d2e9326917fed",
+    "book": "6a6b79056c0790107602e6f8",
+    "status": "pending",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T15:42:51.427Z",
+    "updatedAt": "2026-07-31T15:42:51.427Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cc281305deb856f4b120e",
+    "student": "6a6ca4ab443d2e9326917fed",
+    "book": "6a6b79056c0790107602e6f8",
+    "status": "rejected",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T15:42:57.369Z",
+    "updatedAt": "2026-07-31T16:33:58.523Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cc285305deb856f4b1211",
+    "student": "6a6ca4ab443d2e9326917fed",
+    "book": "6a6b79056c0790107602e70c",
+    "status": "rejected",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T15:43:01.981Z",
+    "updatedAt": "2026-07-31T16:33:52.992Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cc289305deb856f4b1214",
+    "student": "6a6ca4ab443d2e9326917fed",
+    "book": "6a6b79056c0790107602e6f7",
+    "status": "rejected",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T15:43:05.961Z",
+    "updatedAt": "2026-07-31T16:33:55.062Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cc2b9305deb856f4b1228",
+    "teacher": "6a6b79076c0790107602e72a",
+    "book": "6a6b79056c0790107602e70c",
+    "status": "rejected",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T15:43:53.729Z",
+    "updatedAt": "2026-07-31T16:33:56.317Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cc95dbb41363c92689ab6",
+    "student": "6a6b79056c0790107602e70e",
+    "book": "6a6b79056c0790107602e70c",
+    "status": "pending",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:12:13.591Z",
+    "updatedAt": "2026-07-31T16:12:13.591Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccbfab0eaffb6d72f7479",
+    "student": "6a6b79056c0790107602e70e",
+    "book": "6a6b79056c0790107602e70c",
+    "status": "pending",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:23:22.772Z",
+    "updatedAt": "2026-07-31T16:23:22.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccbfbb0eaffb6d72f7484",
+    "teacher": "6a6b79076c0790107602e72a",
+    "book": "6a6b79056c0790107602e70c",
+    "status": "pending",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:23:23.251Z",
+    "updatedAt": "2026-07-31T16:23:23.251Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccf1ec7f5a555162016c7",
+    "student": "6a6ca4ab443d2e9326917fed",
+    "book": "6a6b79056c0790107602e6f7",
+    "status": "pending",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:36:46.746Z",
+    "updatedAt": "2026-07-31T16:36:46.746Z",
+    "__v": 0
+  }
+]

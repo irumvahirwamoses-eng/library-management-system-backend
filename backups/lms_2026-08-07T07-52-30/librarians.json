@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "6a6b79056c0790107602e589",
+    "name": "Admin Librarian",
+    "email": "admin@gmail.com",
+    "password": "$2a$10$pu1gTQZ2672MImUae4H7T.M9O9GbL9Txs97NCWjAdlfDN71VIRL0e",
+    "school": "6a6b79046c0790107602e587",
+    "profilePic": "default.png",
+    "mustChangePassword": false,
+    "createdAt": "2026-07-30T16:17:09.065Z",
+    "updatedAt": "2026-07-30T16:17:09.065Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ca92a443d2e9326918075",
+    "name": "aporinaire",
+    "email": "muganza@gmail.com",
+    "password": "$2a$10$LUO56AJw1QUlT5kuWFU7zODWRuU3lHyfu0xt4XHremhee0MGZ/osy",
+    "school": "6a6ca92a443d2e9326918073",
+    "profilePic": "default.png",
+    "mustChangePassword": true,
+    "createdAt": "2026-07-31T13:54:50.807Z",
+    "updatedAt": "2026-07-31T15:45:16.216Z",
+    "__v": 0
+  }
+]

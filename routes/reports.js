@@ -44,10 +44,10 @@ router.get('/categories', async (req, res) => {
   try {
     const rows = await Book.aggregate([
       { $match: schoolMatch(req) },
-      { $group: { _id: { $ifNull: ['$category', 'Uncategorized'] }, titles: { $sum: 1 }, copies: { $sum: { $convert: { input: { $ifNull: ['$quantity', 0] }, to: 'int', onError: 0, onNull: 0 } } } } },
+      { $group: { _id: { $toUpper: { $trim: { input: { $ifNull: ['$category', ''] } } } }, titles: { $sum: 1 }, copies: { $sum: { $convert: { input: { $ifNull: ['$quantity', 0] }, to: 'int', onError: 0, onNull: 0 } } } } },
       { $sort: { copies: -1, _id: 1 } }
     ]);
-    res.json(rows.map((r) => ({ category: r._id, titles: r.titles, copies: r.copies })));
+    res.json(rows.map((r) => ({ category: r._id || 'Uncategorized', titles: r.titles, copies: r.copies })));
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

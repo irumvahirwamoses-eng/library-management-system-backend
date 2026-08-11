@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "6a6ca541443d2e9326918020",
+    "totalBorrowed": 1,
+    "totalReturned": 0,
+    "note": "the books was borrowed by moses",
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T13:38:09.333Z",
+    "updatedAt": "2026-07-31T13:38:09.333Z",
+    "__v": 0
+  }
+]

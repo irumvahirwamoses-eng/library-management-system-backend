@@ -1,0 +1,79 @@
+[
+  {
+    "_id": "6a6ccbfab0eaffb6d72f747b",
+    "userType": "librarian",
+    "user": null,
+    "message": "New book request from student",
+    "isRead": true,
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:23:22.807Z",
+    "updatedAt": "2026-07-31T16:35:27.919Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccbfbb0eaffb6d72f7486",
+    "userType": "librarian",
+    "user": null,
+    "message": "New book request from teacher",
+    "isRead": true,
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:23:23.256Z",
+    "updatedAt": "2026-07-31T16:35:27.889Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce71c7f5a55516201651",
+    "userType": "student",
+    "user": "6a6ca4ab443d2e9326917fed",
+    "message": "Your book request for \"CONSTRUCTION\" was rejected. The book was not found.",
+    "isRead": true,
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:33:53.103Z",
+    "updatedAt": "2026-07-31T16:36:37.919Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce73c7f5a5551620165c",
+    "userType": "student",
+    "user": "6a6ca4ab443d2e9326917fed",
+    "message": "Your book request for \"BRICK WORK\" was rejected. The book was not found.",
+    "isRead": true,
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:33:55.076Z",
+    "updatedAt": "2026-07-31T16:36:37.913Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce74c7f5a55516201667",
+    "userType": "teacher",
+    "user": "6a6b79076c0790107602e72a",
+    "message": "Your book request for \"CONSTRUCTION\" was rejected. The book was not found.",
+    "isRead": false,
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:33:56.356Z",
+    "updatedAt": "2026-07-31T16:33:56.356Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6cce76c7f5a55516201673",
+    "userType": "student",
+    "user": "6a6ca4ab443d2e9326917fed",
+    "message": "Your book request for \"BRICK WORK\" was rejected. The book was not found.",
+    "isRead": true,
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:33:58.540Z",
+    "updatedAt": "2026-07-31T16:36:37.896Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ccf1ec7f5a555162016c9",
+    "userType": "librarian",
+    "user": null,
+    "message": "New book request from student",
+    "isRead": false,
+    "school": "6a6b79046c0790107602e587",
+    "createdAt": "2026-07-31T16:36:46.784Z",
+    "updatedAt": "2026-07-31T16:36:46.784Z",
+    "__v": 0
+  }
+]

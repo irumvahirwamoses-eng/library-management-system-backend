@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "6a6b79046c0790107602e587",
+    "name": "Ecole Technique Saint Kizito Save TSS",
+    "type": "tvet",
+    "district": "Gisagara",
+    "sector": "Save",
+    "phone": "0781668988",
+    "email": "info@ectsave.rw",
+    "adminName": "Admin Librarian",
+    "status": "active",
+    "createdAt": "2026-07-30T16:17:08.876Z",
+    "updatedAt": "2026-07-30T16:17:08.876Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a6ca92a443d2e9326918073",
+    "name": "ep.muganza",
+    "type": "general_education",
+    "district": "nyarugenge",
+    "sector": "kimisagara",
+    "phone": "0786578390",
+    "email": "muganza@gmail.com",
+    "adminName": "aporinaire",
+    "status": "active",
+    "createdAt": "2026-07-31T13:54:50.610Z",
+    "updatedAt": "2026-07-31T15:27:53.555Z",
+    "__v": 0
+  }
+]

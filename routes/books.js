@@ -15,7 +15,10 @@ router.get('/', async (req, res) => {
   if (req.query.search) {
     filter.$text = { $search: req.query.search };
   }
-  if (req.query.category) filter.category = req.query.category;
+  if (req.query.category) {
+    const cat = String(req.query.category).trim();
+    filter.category = new RegExp('^' + cat.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', 'i');
+  }
   if (req.query.location) filter.location = req.query.location;
   if (req.query.availability === 'available') filter.available = { $gt: 0 };
   if (req.query.availability === 'unavailable') filter.available = { $lte: 0 };
@@ -49,6 +52,7 @@ router.post('/', requireRole('librarian', 'superadmin'), async (req, res) => {
     if (!Number.isFinite(available) || available < 0) return res.status(400).json({ error: 'Available must be a non-negative number' });
     if (available > quantity) return res.status(400).json({ error: 'Available copies cannot be greater than quantity' });
     const data = { ...req.body, quantity, available, school: req.schoolId || req.body.school };
+    if (data.category) data.category = String(data.category).trim().toUpperCase();
     const book = await Book.create(data);
     await logActivity({ schoolId: data.school, userRole: req.user.role, user: req.user.id, action: 'CREATE', entity: 'Book', details: { title: book.title, quantity } });
     res.status(201).json(book);
@@ -66,7 +70,9 @@ router.put('/:id', requireRole('librarian', 'superadmin'), async (req, res) => {
     if (!Number.isFinite(quantity) || quantity < 0) return res.status(400).json({ error: 'Quantity must be a non-negative number' });
     if (!Number.isFinite(available) || available < 0) return res.status(400).json({ error: 'Available must be a non-negative number' });
     if (available > quantity) return res.status(400).json({ error: 'Available copies cannot be greater than quantity' });
-    const book = await Book.findByIdAndUpdate(req.params.id, { ...req.body, quantity, available }, { new: true });
+    const updates = { ...req.body, quantity, available };
+    if (updates.category) updates.category = String(updates.category).trim().toUpperCase();
+    const book = await Book.findByIdAndUpdate(req.params.id, updates, { new: true });
     await logActivity({ schoolId: book?.school, userRole: req.user.role, user: req.user.id, action: 'UPDATE', entity: 'Book', details: { title: book?.title, quantity } });
     res.json(book);
   } catch (err) {
