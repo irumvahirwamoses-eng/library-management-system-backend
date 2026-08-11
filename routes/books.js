@@ -13,7 +13,11 @@ router.get('/', async (req, res) => {
   const archived = req.query.archived === 'true';
   filter.archived = archived ? true : { $ne: true };
   if (req.query.search) {
-    filter.$text = { $search: req.query.search };
+    const q = String(req.query.search).trim();
+    if (q) {
+      const re = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+      filter.$or = [{ title: re }, { author: re }, { isbn: re }];
+    }
   }
   if (req.query.category) {
     const cat = String(req.query.category).trim();
