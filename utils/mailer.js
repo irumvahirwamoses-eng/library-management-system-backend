@@ -82,7 +82,7 @@ const buildEmail = ({ subject, heading, intro, items, footer, totalLabel }) => {
     html: `
     <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
       <div style="background:linear-gradient(90deg,#2563eb,#4f46e5);padding:20px 28px">
-        <h1 style="color:#fff;margin:0;font-size:20px">${heading} — ${APP}</h1>
+        <h1 style="color:#fff;margin:0;font-size:20px">${heading}</h1>
       </div>
       <div style="padding:28px;color:#374151">
         <p style="margin-top:0">Dear <strong>${intro.borrowerName}</strong>,</p>
@@ -103,7 +103,7 @@ export const sendBorrowReceipt = async ({ to, borrowerName, items, schoolName })
   const total = items.reduce((s, it) => s + (it.quantity || 1), 0);
   const { subject, html } = buildEmail({
     subject: `You borrowed ${total} book(s) from ${library}`,
-    heading: 'Library Borrowing Confirmation',
+    heading: `Library Borrowing Confirmation — ${library}`,
     intro: {
       borrowerName,
       line: `You have successfully borrowed the following ${total} book(s) from ${library}:`
@@ -121,7 +121,7 @@ export const sendReturnReceipt = async ({ to, borrowerName, items, schoolName })
   const total = items.reduce((s, it) => s + (it.quantity || 1), 0);
   const { subject, html } = buildEmail({
     subject: `You returned ${total} book(s) to ${library}`,
-    heading: 'Books Returned — Verification',
+    heading: `Books Returned — Verification — ${library}`,
     intro: {
       borrowerName,
       line: `This is to confirm that the following ${total} book(s) were returned to ${library}:`
