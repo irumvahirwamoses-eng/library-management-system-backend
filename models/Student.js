@@ -8,6 +8,7 @@ const studentSchema = new mongoose.Schema({
   },
   studentName: { type: String, required: true },
   class: String,
+  email: String,
   phonenumber: String,
   birthDate: Date,
   level: { type: String, enum: ['level3', 'level4', 'level5', ''] },
