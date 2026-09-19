@@ -4,9 +4,10 @@ import Book from '../models/Book.js';
 import Student from '../models/Student.js';
 import Teacher from '../models/Teacher.js';
 import Notification from '../models/Notification.js';
+import School from '../models/School.js';
 import { verifyToken, extractSchool, requireRole } from '../middleware/auth.js';
 import { logActivity } from '../utils/activity.js';
-import { sendBorrowReceipt } from '../utils/mailer.js';
+import { sendBorrowReceipt, sendReturnReceipt } from '../utils/mailer.js';
 
 const router = express.Router();
 
@@ -154,15 +155,54 @@ const notifyBorrower = async (result, schoolId) => {
       message: `You borrowed ${created.length} book(s): ${titles}`,
       school: schoolId || borrower.school
     });
+    const school = await School.findById(schoolId || borrower.school).select('name');
     if (borrower.email) {
       sendBorrowReceipt({
         to: borrower.email,
         borrowerName: borrower.name,
-        items: notifyItems
+        items: notifyItems,
+        schoolName: school?.name
       }).catch((err) => console.log(`Borrow email failed (${process.env.SMTP_HOST}:${process.env.SMTP_PORT || 587}):`, err.message));
     }
   } catch (err) {
     console.log('Borrow notification failed:', err.message);
+  }
+};
+
+const notifyReturned = async (records) => {
+  try {
+    const first = records[0];
+    const borrower = first?.student
+      ? { name: first.student.studentName, email: first.student.email, school: first.school }
+      : first?.teacher
+      ? { name: first.teacher.teacherName, email: first.teacher.email, school: first.school }
+      : null;
+    if (!borrower) return;
+
+    const counts = new Map();
+    for (const r of records) counts.set(String(r.book?._id), (counts.get(String(r.book?._id)) || 0) + 1);
+    const items = [...counts].map(([bookId, quantity]) => {
+      const r = records.find((x) => String(x.book?._id) === bookId);
+      return { title: r?.book?.title || 'Book', quantity };
+    });
+
+    const school = await School.findById(borrower.school).select('name');
+    await Notification.create({
+      userType: first.student ? 'student' : 'teacher',
+      user: first.student ? first.student._id : first.teacher._id,
+      message: `You returned ${records.length} book(s) to the library`,
+      school: borrower.school
+    });
+    if (borrower.email) {
+      sendReturnReceipt({
+        to: borrower.email,
+        borrowerName: borrower.name,
+        items,
+        schoolName: school?.name
+      }).catch((err) => console.log(`Return email failed (${process.env.SMTP_HOST}:${process.env.SMTP_PORT || 587}):`, err.message));
+    }
+  } catch (err) {
+    console.log('Return notification failed:', err.message);
   }
 };
 
@@ -176,7 +216,10 @@ router.put('/return-all', requireRole('librarian', 'superadmin'), async (req, re
     if (student) filter.student = student;
     if (teacher) filter.teacher = teacher;
 
-    const records = await BorrowedBook.find(filter).populate('book', 'title');
+    const records = await BorrowedBook.find(filter)
+      .populate('book', 'title')
+      .populate('student', 'studentName email')
+      .populate('teacher', 'teacherName email');
     if (records.length === 0) return res.status(404).json({ error: 'No borrowed books found for this borrower' });
 
     const counts = {};
@@ -187,6 +230,7 @@ router.put('/return-all', requireRole('librarian', 'superadmin'), async (req, re
       await Book.findByIdAndUpdate(bookId, { $inc: { available: count } });
     }
     await logActivity({ schoolId: req.schoolId || records[0]?.school, userRole: req.user.role, user: req.user.id, action: 'RETURN', entity: 'Book', details: { count: records.length } });
+    await notifyReturned(records);
     res.json({ updated: records.length });
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -195,7 +239,10 @@ router.put('/return-all', requireRole('librarian', 'superadmin'), async (req, re
 
 router.put('/:id/return', requireRole('librarian', 'superadmin'), async (req, res) => {
   try {
-    const record = await BorrowedBook.findById(req.params.id);
+    const record = await BorrowedBook.findById(req.params.id)
+      .populate('student', 'studentName email')
+      .populate('teacher', 'teacherName email')
+      .populate('book', 'title');
     if (!record) return res.status(404).json({ error: 'Record not found' });
     if (record.status === 'returned') return res.status(400).json({ error: 'Already returned' });
 
@@ -210,6 +257,7 @@ router.put('/:id/return', requireRole('librarian', 'superadmin'), async (req, re
     }
 
     await logActivity({ schoolId: record.school, userRole: req.user.role, user: req.user.id, action: 'RETURN', entity: 'Book', details: { book: book?.title } });
+    await notifyReturned([record]);
     res.json(record);
   } catch (err) {
     res.status(400).json({ error: err.message });
