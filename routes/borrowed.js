@@ -159,7 +159,7 @@ const notifyBorrower = async (result, schoolId) => {
         to: borrower.email,
         borrowerName: borrower.name,
         items: notifyItems
-      }).catch((err) => console.log('Borrow email failed:', err.message));
+      }).catch((err) => console.log(`Borrow email failed (${process.env.SMTP_HOST}:${process.env.SMTP_PORT || 587}):`, err.message));
     }
   } catch (err) {
     console.log('Borrow notification failed:', err.message);
