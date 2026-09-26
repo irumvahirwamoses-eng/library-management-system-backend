@@ -28,7 +28,7 @@ const getBorrower = async (studentId, teacherId) => {
   return null;
 };
 
-const applyBorrow = async ({ items, studentId, teacherId, schoolId, userRole, userId }) => {
+const applyBorrow = async ({ items, studentId, teacherId, schoolId, userRole, userId, dueDate: dueDateInput }) => {
   const ids = items.map((i) => i.bookId);
   const books = await Book.find({ _id: { $in: ids } });
   const byId = new Map(books.map((b) => [String(b._id), b]));
@@ -43,7 +43,13 @@ const applyBorrow = async ({ items, studentId, teacherId, schoolId, userRole, us
 
   const school = schoolId;
   const now = new Date();
-  const dueDate = addDays(now, LOAN_PERIOD_DAYS);
+  const dueDate = dueDateInput
+    ? new Date(dueDateInput.length === 10 ? `${dueDateInput}T00:00:00` : dueDateInput)
+    : addDays(now, LOAN_PERIOD_DAYS);
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  if (dueDate && Number.isNaN(dueDate.getTime())) return { error: 'Invalid return date' };
+  if (dueDate && dueDate.getTime() < startOfToday.getTime()) return { error: 'Return date cannot be in the past' };
   const created = [];
   const notifyItems = [];
 
@@ -96,7 +102,7 @@ router.get('/my-history', async (req, res) => {
 
 router.post('/', requireRole('librarian', 'superadmin'), async (req, res) => {
   try {
-    const { book: bookId, ...rest } = req.body;
+    const { book: bookId, returnDate, ...rest } = req.body;
     const book = await Book.findById(bookId);
     if (!book) return res.status(404).json({ error: 'Book not found' });
     if (book.available < 1) return res.status(400).json({ error: 'No copies available' });
@@ -108,7 +114,8 @@ router.post('/', requireRole('librarian', 'superadmin'), async (req, res) => {
       teacherId: rest.teacher,
       schoolId,
       userRole: req.user.role,
-      userId: req.user.id
+      userId: req.user.id,
+      dueDate: returnDate
     });
     if (result.error) return res.status(400).json({ error: result.error });
 
@@ -121,7 +128,7 @@ router.post('/', requireRole('librarian', 'superadmin'), async (req, res) => {
 
 router.post('/bulk', requireRole('librarian', 'superadmin'), async (req, res) => {
   try {
-    const { items, student, teacher, school } = req.body;
+    const { items, student, teacher, school, returnDate } = req.body;
     if (!Array.isArray(items) || items.length === 0) {
       return res.status(400).json({ error: 'Provide at least one book to borrow' });
     }
@@ -136,7 +143,8 @@ router.post('/bulk', requireRole('librarian', 'superadmin'), async (req, res) =>
       teacherId: teacher,
       schoolId,
       userRole: req.user.role,
-      userId: req.user.id
+      userId: req.user.id,
+      dueDate: returnDate
     });
     if (result.error) return res.status(400).json({ error: result.error });
 
