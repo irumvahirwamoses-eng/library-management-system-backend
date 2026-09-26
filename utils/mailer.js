@@ -5,6 +5,9 @@ let configured = false;
 
 export const isEmailEnabled = () => process.env.EMAIL_NOTIFICATIONS_ENABLED === 'true';
 
+// Name shown as the sender of every email (e.g. "Library Management System" or your school name).
+export const getSenderName = () => process.env.MAIL_SENDER_NAME || 'Library Management System';
+
 const APP = 'Library Management System';
 
 const buildTransporter = () => {
@@ -30,6 +33,8 @@ const getTransporter = () => {
   return transporter;
 };
 
+const fromAddress = () => `${getSenderName()} <${process.env.SMTP_FROM}>`;
+
 // Preferred path: Brevo HTTP API over port 443 (avoids SMTP port/network issues on Render).
 const sendViaBrevoApi = async ({ to, subject, html, text }) => {
   const key = process.env.BREVO_API_KEY;
@@ -39,7 +44,7 @@ const sendViaBrevoApi = async ({ to, subject, html, text }) => {
     method: 'POST',
     headers: { 'api-key': key, 'content-type': 'application/json' },
     body: JSON.stringify({
-      sender: { email: from },
+      sender: { name: getSenderName(), email: from },
       to: [{ email: to }],
       subject,
       htmlContent: html,
@@ -66,15 +71,23 @@ export const sendMail = async ({ to, subject, html, text }) => {
 
   const t = getTransporter();
   if (!t) return null;
-  const info = await t.sendMail({ from: process.env.SMTP_FROM, to, subject, html, text });
+  const info = await t.sendMail({ from: fromAddress(), to, subject, html, text });
   console.log(`Email sent to ${to}: ${info.messageId} (SMTP)`);
   return info;
+};
+
+const fmtDate = (d) => {
+  if (!d) return '';
+  return new Date(d).toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
 };
 
 const buildEmail = ({ subject, heading, intro, items, footer, totalLabel }) => {
   const now = new Date().toLocaleString();
   const rows = items
-    .map((it) => `<li><strong>${it.title}</strong>${it.author ? ` — ${it.author}` : ''}${it.quantity > 1 ? ` (x${it.quantity})` : ''}</li>`)
+    .map(
+      (it) =>
+        `<li><strong>${it.title}</strong>${it.author ? ` — ${it.author}` : ''}${it.quantity > 1 ? ` (x${it.quantity})` : ''}${it.note ? ` — ${it.note}` : ''}</li>`
+    )
     .join('');
   const total = items.reduce((s, it) => s + (it.quantity || 1), 0);
   return {
@@ -87,6 +100,7 @@ const buildEmail = ({ subject, heading, intro, items, footer, totalLabel }) => {
       <div style="padding:28px;color:#374151">
         <p style="margin-top:0">Dear <strong>${intro.borrowerName}</strong>,</p>
         <p>${intro.line}</p>
+        ${intro.extra ? `<p>${intro.extra}</p>` : ''}
         <ul style="padding-left:20px;line-height:1.7">${rows}</ul>
         <p><strong>Total:</strong> ${total} ${total === 1 ? 'book' : 'books'}</p>
         <p class="meta" style="color:#6b7280;font-size:12px">Sent on ${now}${totalLabel ? ` • ${totalLabel}` : ''}</p>
@@ -97,7 +111,7 @@ const buildEmail = ({ subject, heading, intro, items, footer, totalLabel }) => {
   };
 };
 
-export const sendBorrowReceipt = async ({ to, borrowerName, items, schoolName }) => {
+export const sendBorrowReceipt = async ({ to, borrowerName, items, schoolName, returnDate }) => {
   if (!to || items.length === 0) return null;
   const library = schoolName ? `${schoolName} ${APP}` : APP;
   const total = items.reduce((s, it) => s + (it.quantity || 1), 0);
@@ -106,10 +120,11 @@ export const sendBorrowReceipt = async ({ to, borrowerName, items, schoolName })
     heading: `Library Borrowing Confirmation — ${library}`,
     intro: {
       borrowerName,
-      line: `You have successfully borrowed the following ${total} book(s) from ${library}:`
+      line: `You have successfully borrowed the following ${total} book(s) from ${library}:`,
+      extra: returnDate ? `<strong>Please return them by:</strong> <b style="color:#dc2626">${fmtDate(returnDate)}</b>` : ''
     },
     items,
-    footer: 'Please return them on time to avoid inconvenience. In case of loss or damage, please report to the librarian.',
+    footer: 'In case of loss or damage, please report to the librarian as soon as possible.',
     totalLabel: 'Borrowing confirmation'
   });
   return sendMail({ to, subject, html });
@@ -129,6 +144,31 @@ export const sendReturnReceipt = async ({ to, borrowerName, items, schoolName })
     items,
     footer: 'Thank you for returning the books on time.',
     totalLabel: 'Return confirmed'
+  });
+  return sendMail({ to, subject, html });
+};
+
+export const sendDueReminder = async ({ to, borrowerName, items, schoolName }) => {
+  if (!to || items.length === 0) return null;
+  const library = schoolName ? `${schoolName} ${APP}` : APP;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const overdue = items.some((it) => it.dueDate && new Date(it.dueDate) < today);
+  const total = items.reduce((s, it) => s + (it.quantity || 1), 0);
+  const { subject, html } = buildEmail({
+    subject: `${overdue ? 'Overdue' : 'Return reminder'}: ${total} book(s) at ${library}`,
+    heading: `${overdue ? 'Overdue Books — Action Required' : 'Return Due Reminder'} — ${library}`,
+    intro: {
+      borrowerName,
+      line: overdue
+        ? `The following ${total} book(s) you borrowed from ${library} ${total === 1 ? 'is' : 'are'} now past the return date. Please return ${total === 1 ? 'it' : 'them'} as soon as possible.`
+        : `The following ${total} book(s) you borrowed from ${library} ${total === 1 ? 'has' : 'have'} reached the return date. Please return ${total === 1 ? 'it' : 'them'} today or as soon as possible.`
+    },
+    items,
+    footer: overdue
+      ? 'These books are now overdue. Please return them immediately to avoid inconvenience to other readers.'
+      : 'Please take them back to the library today. Thank you.',
+    totalLabel: 'Due-date reminder'
   });
   return sendMail({ to, subject, html });
 };

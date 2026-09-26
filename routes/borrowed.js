@@ -11,6 +11,9 @@ import { sendBorrowReceipt, sendReturnReceipt } from '../utils/mailer.js';
 
 const router = express.Router();
 
+const LOAN_PERIOD_DAYS = 14;
+const addDays = (date, days) => new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
+
 router.use(verifyToken, extractSchool);
 
 const getBorrower = async (studentId, teacherId) => {
@@ -40,6 +43,7 @@ const applyBorrow = async ({ items, studentId, teacherId, schoolId, userRole, us
 
   const school = schoolId;
   const now = new Date();
+  const dueDate = addDays(now, LOAN_PERIOD_DAYS);
   const created = [];
   const notifyItems = [];
 
@@ -52,6 +56,7 @@ const applyBorrow = async ({ items, studentId, teacherId, schoolId, userRole, us
         ...(studentId ? { student: studentId } : {}),
         ...(teacherId ? { teacher: teacherId } : {}),
         borrowDate: now,
+        dueDate,
         status: 'borrowed',
         school
       }));
@@ -61,7 +66,7 @@ const applyBorrow = async ({ items, studentId, teacherId, schoolId, userRole, us
     await logActivity({ schoolId: school, userRole, user: userId, action: 'BORROW', entity: 'Book', details: { book: book.title, quantity: item.quantity } });
   }
 
-  return { created, notifyItems };
+  return { created, notifyItems, dueDate };
 };
 
 router.get('/', async (req, res) => {
@@ -144,7 +149,7 @@ router.post('/bulk', requireRole('librarian', 'superadmin'), async (req, res) =>
 
 const notifyBorrower = async (result, schoolId) => {
   try {
-    const { created, notifyItems } = result;
+    const { created, notifyItems, dueDate } = result;
     const record = created[0];
     const borrower = await getBorrower(record.student, record.teacher);
     if (!borrower) return;
@@ -152,7 +157,7 @@ const notifyBorrower = async (result, schoolId) => {
     await Notification.create({
       userType: borrower.type,
       user: borrower.id,
-      message: `You borrowed ${created.length} book(s): ${titles}`,
+      message: `You borrowed ${created.length} book(s): ${titles}. Due by ${new Date(dueDate).toLocaleDateString()}`,
       school: schoolId || borrower.school
     });
     const school = await School.findById(schoolId || borrower.school).select('name');
@@ -161,7 +166,8 @@ const notifyBorrower = async (result, schoolId) => {
         to: borrower.email,
         borrowerName: borrower.name,
         items: notifyItems,
-        schoolName: school?.name
+        schoolName: school?.name,
+        returnDate: dueDate
       }).catch((err) => console.log(`Borrow email failed (${process.env.SMTP_HOST}:${process.env.SMTP_PORT || 587}):`, err.message));
     }
   } catch (err) {
