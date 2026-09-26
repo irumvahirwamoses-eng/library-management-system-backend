@@ -251,6 +251,34 @@ router.put('/return-all', requireRole('librarian', 'superadmin'), async (req, re
   }
 });
 
+router.put('/return-book', requireRole('librarian', 'superadmin'), async (req, res) => {
+  try {
+    const { book, student, teacher } = req.body;
+    if (!book) return res.status(400).json({ error: 'Provide the book to return' });
+    if (!student && !teacher) return res.status(400).json({ error: 'Provide either student or teacher' });
+
+    const filter = { status: 'borrowed', book };
+    if (req.schoolId) filter.school = req.schoolId;
+    if (student) filter.student = student;
+    if (teacher) filter.teacher = teacher;
+
+    const records = await BorrowedBook.find(filter)
+      .populate('book', 'title author')
+      .populate('student', 'studentName email')
+      .populate('teacher', 'teacherName email');
+    if (records.length === 0) return res.status(404).json({ error: 'No borrowed copies found for this book' });
+
+    const count = records.length;
+    await BorrowedBook.updateMany({ _id: { $in: records.map((r) => r._id) } }, { $set: { status: 'returned', returnDate: new Date() } });
+    await Book.findByIdAndUpdate(book, { $inc: { available: count } });
+    await logActivity({ schoolId: req.schoolId || records[0]?.school, userRole: req.user.role, user: req.user.id, action: 'RETURN', entity: 'Book', details: { book: records[0]?.book?.title, count } });
+    await notifyReturned(records);
+    res.json({ updated: count });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 router.put('/:id/return', requireRole('librarian', 'superadmin'), async (req, res) => {
   try {
     const record = await BorrowedBook.findById(req.params.id)
